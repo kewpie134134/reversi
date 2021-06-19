@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const square = (num: number) => {
   return num * num;
 };

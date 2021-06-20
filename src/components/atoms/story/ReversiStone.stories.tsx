@@ -5,8 +5,8 @@ const title = {
   title: 'ReversiStone',
 };
 
-export const showReversiStoneWhite = () => <ReversiStone color={'white'} />;
+export const ReversiStoneWhite = () => <ReversiStone color={'white'} />;
 
-export const showReversiStoneBlack = () => <ReversiStone color={'black'} />;
+export const ReversiStoneBlack = () => <ReversiStone color={'black'} />;
 
 export default title;

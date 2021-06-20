@@ -5,6 +5,6 @@ const title = {
   title: 'CustomLabel',
 };
 
-export const showCustomLabel = () => <CustomLabel customLabel={'x2'} />;
+export const CustomLabelX2 = () => <CustomLabel customLabel={'×2'} />;
 
 export default title;

@@ -5,7 +5,11 @@ interface CustomLabelProps {
 }
 
 const CustomLabel = (props: CustomLabelProps) => {
-  return <>{props.customLabel}</>;
+  return (
+    <>
+      <label>{props.customLabel}</label>
+    </>
+  );
 };
 
 export default CustomLabel;

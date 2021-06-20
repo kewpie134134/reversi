@@ -3,10 +3,12 @@ import CustomLabel from '../CustomLabel';
 import { shallow, ShallowWrapper } from 'enzyme';
 
 describe('CustomLabel.tsx テスト', () => {
-  let sampleComponent: ShallowWrapper;
+  let wrapper: ShallowWrapper;
   beforeEach(() => {
-    sampleComponent = shallow(<CustomLabel customLabel={'x2'} />);
+    wrapper = shallow(<CustomLabel customLabel={'×2'} />);
   });
 
-  it('表示テスト', () => {});
+  it('propsで渡された文字列が表示されること', () => {
+    expect(wrapper.find('label').text()).toEqual('×2');
+  });
 });

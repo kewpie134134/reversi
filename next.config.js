@@ -8,6 +8,8 @@ module.exports = {
           {
             loose: true,
           },
+          '@babel/plugin-proposal-private-property-in-object',
+          { loose: true },
         ],
       ],
     },

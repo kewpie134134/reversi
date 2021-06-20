@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './index';
+import Home from '../index';
 
 const title = {
   title: 'Home',

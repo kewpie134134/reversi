@@ -3,8 +3,14 @@ import ReversiTile from '../ReversiTile';
 import { shallow, ShallowWrapper } from 'enzyme';
 
 describe('ReversiTile.tsx テスト', () => {
-  let sampleComponent: ShallowWrapper;
+  let wrapper: ShallowWrapper;
   beforeEach(() => {
-    sampleComponent = shallow(<ReversiTile />);
+    wrapper = shallow(<ReversiTile />);
+  });
+
+  it('オセロタイルが表示される', () => {
+    expect(wrapper.find('img').props().src).toEqual(
+      '/assets/images/reversiTile.svg'
+    );
   });
 });

@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '../../styles/StoneOnTile.module.css';
-import ReversiStone from '../atoms/ReversiStone';
-import ExpectedStone from '../atoms/ExpectedStone';
+import styles from 'styles/StoneOnTile.module.css';
+import ReversiStone from 'components/atoms/ReversiStone';
+import ExpectedStone from 'components/atoms/ExpectedStone';
 
 interface StoneOnTileProps {
   name: string;

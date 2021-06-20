@@ -18,4 +18,5 @@ module.exports = {
       tsconfig: '<rootDir>/src/test/tsconfig.jest.json',
     },
   },
+  moduleDirectories: ['node_modules', 'src'],
 };

@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   stories: [
     '../src/components/**/*.stories.@(tsx|mdx)',
@@ -12,5 +14,12 @@ module.exports = {
   ],
   typescript: {
     reactDocgen: 'none',
+  },
+  webpackFinal: async (baseConfig) => {
+    baseConfig.resolve.modules = [
+      ...(baseConfig.resolve.modules || []),
+      path.resolve(__dirname, '../src'),
+    ];
+    return baseConfig;
   },
 };

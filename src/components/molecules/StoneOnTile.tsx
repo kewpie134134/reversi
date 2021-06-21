@@ -12,12 +12,16 @@ const StoneOnTile = (props: StoneOnTileProps) => {
   switch (props.name) {
     case 'blackStone':
       component = <ReversiStone color={'black'} />;
+      break;
     case 'whiteStone':
       component = <ReversiStone color={'white'} />;
+      break;
     case 'blackMarker':
       component = <ExpectedStone color={'black'} />;
+      break;
     case 'whiteMarker':
       component = <ExpectedStone color={'white'} />;
+      break;
     default:
       component = null;
   }

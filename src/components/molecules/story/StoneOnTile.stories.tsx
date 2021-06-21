@@ -5,6 +5,6 @@ const title = {
   title: 'StoneOnTile',
 };
 
-export const WhiteStoneOnTile = () => <StoneOnTile name={'blackStone'} />;
+export const WhiteStoneOnTile = () => <StoneOnTile name={'whiteStone'} />;
 
 export default title;

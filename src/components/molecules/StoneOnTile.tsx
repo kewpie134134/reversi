@@ -11,6 +11,9 @@ const useStyles = makeStyles({
   tile: {
     height: '100px',
     width: '100px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     background: '#69C491',
   },
 });

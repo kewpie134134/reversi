@@ -1,4 +1,3 @@
-import StoneOnTile from 'components/molecules/StoneOnTile';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
@@ -49,7 +48,6 @@ const Home = () => {
             </p>
           </a>
         </div>
-        <StoneOnTile name={'blackStone'} />
       </main>
 
       <footer className={styles.footer}>

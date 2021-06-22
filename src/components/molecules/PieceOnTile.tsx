@@ -1,9 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import ReversiStone from 'components/atoms/ReversiStone';
-import ExpectedStone from 'components/atoms/ExpectedStone';
+import Piece from 'components/atoms/Piece';
+import Marker from 'components/atoms/Marker';
 
-interface StoneOnTileProps {
+interface PieceOnTileProps {
   name: string;
 }
 
@@ -18,21 +18,21 @@ const useStyles = makeStyles({
   },
 });
 
-const StoneOnTile = (props: StoneOnTileProps) => {
+const PieceOnTile = (props: PieceOnTileProps) => {
   const classes = useStyles();
   let component;
   switch (props.name) {
     case 'blackStone':
-      component = <ReversiStone color={'black'} />;
+      component = <Piece color={'black'} />;
       break;
     case 'whiteStone':
-      component = <ReversiStone color={'white'} />;
+      component = <Piece color={'white'} />;
       break;
     case 'blackMarker':
-      component = <ExpectedStone color={'black'} />;
+      component = <Marker color={'black'} />;
       break;
     case 'whiteMarker':
-      component = <ExpectedStone color={'white'} />;
+      component = <Marker color={'white'} />;
       break;
     default:
       component = null;
@@ -40,4 +40,4 @@ const StoneOnTile = (props: StoneOnTileProps) => {
   return <div className={classes.tile}>{component}</div>;
 };
 
-export default StoneOnTile;
+export default PieceOnTile;

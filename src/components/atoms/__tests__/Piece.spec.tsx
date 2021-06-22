@@ -1,24 +1,24 @@
 import React from 'react';
-import ReversiStone from '../ReversiStone';
+import Piece from '../Piece';
 import { shallow, ShallowWrapper } from 'enzyme';
 
-describe('ReversiStone.tsx テスト', () => {
+describe('Piece.tsx テスト', () => {
   it('props.color が black のとき、黒石のイメージを表示する', () => {
-    const wrapper: ShallowWrapper = shallow(<ReversiStone color={'black'} />);
+    const wrapper: ShallowWrapper = shallow(<Piece color={'black'} />);
     expect(wrapper.find('img').props().src).toEqual(
-      '/assets/images/blackStone.svg'
+      '/assets/images/blackPiece.svg'
     );
   });
 
   it('props.color が white のとき、白石のイメージを表示する', () => {
-    const wrapper: ShallowWrapper = shallow(<ReversiStone color={'white'} />);
+    const wrapper: ShallowWrapper = shallow(<Piece color={'white'} />);
     expect(wrapper.find('img').props().src).toEqual(
-      '/assets/images/whiteStone.svg'
+      '/assets/images/whitePiece.svg'
     );
   });
 
   it('props.color が green のとき、img タグが表示されない', () => {
-    const wrapper: ShallowWrapper = shallow(<ReversiStone color={'green'} />);
+    const wrapper: ShallowWrapper = shallow(<Piece color={'green'} />);
     expect(wrapper.find('img').exists()).toBeFalsy();
   });
 });

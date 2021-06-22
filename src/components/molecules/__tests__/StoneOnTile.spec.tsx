@@ -1,33 +1,33 @@
 import React from 'react';
-import StoneOnTile from '../StoneOnTile';
+import PieceOnTile from '../PieceOnTile';
 import { shallow, ShallowWrapper } from 'enzyme';
 
 describe('StoneOnTile.tsx テスト', () => {
-  it('ReversiStone の color props が black であること', () => {
+  it('Piece の color props が black であること', () => {
     const wrapper: ShallowWrapper = shallow(
-      <StoneOnTile name={'blackStone'} />
+      <PieceOnTile name={'blackStone'} />
     );
-    expect(wrapper.find('ReversiStone').props().color).toEqual('black');
+    expect(wrapper.find('Piece').props().color).toEqual('black');
   });
 
-  it('ReversiStone の color props が white であること', () => {
+  it('Piece の color props が white であること', () => {
     const wrapper: ShallowWrapper = shallow(
-      <StoneOnTile name={'whiteStone'} />
+      <PieceOnTile name={'whiteStone'} />
     );
-    expect(wrapper.find('ReversiStone').props().color).toEqual('white');
+    expect(wrapper.find('Piece').props().color).toEqual('white');
   });
 
-  it('ExpectedStone の color props が black であること', () => {
+  it('Marker の color props が black であること', () => {
     const wrapper: ShallowWrapper = shallow(
-      <StoneOnTile name={'blackMarker'} />
+      <PieceOnTile name={'blackMarker'} />
     );
-    expect(wrapper.find('ExpectedStone').props().color).toEqual('black');
+    expect(wrapper.find('Marker').props().color).toEqual('black');
   });
 
-  it('ExpectedStone の color props が white であること', () => {
+  it('Marker の color props が white であること', () => {
     const wrapper: ShallowWrapper = shallow(
-      <StoneOnTile name={'whiteMarker'} />
+      <PieceOnTile name={'whiteMarker'} />
     );
-    expect(wrapper.find('ExpectedStone').props().color).toEqual('white');
+    expect(wrapper.find('Marker').props().color).toEqual('white');
   });
 });

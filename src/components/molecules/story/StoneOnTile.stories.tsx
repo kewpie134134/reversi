@@ -1,10 +1,10 @@
 import React from 'react';
-import StoneOnTile from '../StoneOnTile';
+import PieceOnTile from '../PieceOnTile';
 
 const title = {
-  title: 'StoneOnTile',
+  title: 'PieceOnTile',
 };
 
-export const WhiteStoneOnTile = () => <StoneOnTile name={'whiteStone'} />;
+export const WhitePieceOnTile = () => <PieceOnTile name={'whiteStone'} />;
 
 export default title;

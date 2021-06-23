@@ -17,7 +17,7 @@ describe('Piece.tsx テスト', () => {
     );
   });
 
-  it('props.color が green のとき、img タグが表示されない', () => {
+  it('props.color が white, black 以外のとき、img タグが表示されない', () => {
     const wrapper: ShallowWrapper = shallow(<Piece color={'green'} />);
     expect(wrapper.find('img').exists()).toBeFalsy();
   });

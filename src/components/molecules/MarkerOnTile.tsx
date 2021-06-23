@@ -19,8 +19,9 @@ const useStyles = makeStyles({
 
 const MarkerOnTile = (props: MarkerOnTileProps) => {
   const classes = useStyles();
-  if (['black', 'white'].includes(props.color)) {
-    return <div className={classes.tile}><Marker color={props.color}/></div>;
+  const {color} = props
+  if (['black', 'white'].includes(color)) {
+    return <div className={classes.tile}><Marker color={color}/></div>;
   } else {
     return<></>
   }

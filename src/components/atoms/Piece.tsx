@@ -5,8 +5,9 @@ interface PieceProps {
 }
 
 const Piece = (props: PieceProps) => {
-  if (['black', 'white'].includes(props.color)) {
-    return <img src={`/assets/images/${props.color}Piece.svg`}></img>;
+  const {color} = props
+  if (['black', 'white'].includes(color)) {
+    return <img src={`/assets/images/${color}Piece.svg`}></img>;
   } else {
     return <></>;
   }

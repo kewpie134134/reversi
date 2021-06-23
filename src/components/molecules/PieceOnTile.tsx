@@ -19,8 +19,9 @@ const useStyles = makeStyles({
 
 const PieceOnTile = (props: PieceOnTileProps) => {
   const classes = useStyles();
-  if (['black', 'white'].includes(props.color)) {
-    return <div className={classes.tile}><Piece color={ props.color}/></div>;
+  const {color} = props
+  if (['black', 'white'].includes(color)) {
+    return <div className={classes.tile}><Piece color={color}/></div>;
   } else {
     return<></>
   }

@@ -16,4 +16,11 @@ describe('MarkerOnTile.tsx テスト', () => {
     );
     expect(wrapper.find('Marker').props().color).toEqual('white');
   });
+
+      it('props が white, black 以外のとき、Marker タグが表示されないこと', () => {
+    const wrapper: ShallowWrapper = shallow(
+      <MarkerOnTile color={'green'} />
+    );
+    expect(wrapper.find('Marker').exists()).toBeFalsy();
+  });
 });

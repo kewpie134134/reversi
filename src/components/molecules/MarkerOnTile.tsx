@@ -1,8 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import Piece from 'components/atoms/Piece';
+import Marker from 'components/atoms/Marker';
 
-interface PieceOnTileProps {
+interface MarkerOnTileProps {
   color: string;
 }
 
@@ -17,13 +17,13 @@ const useStyles = makeStyles({
   },
 });
 
-const PieceOnTile = (props: PieceOnTileProps) => {
+const MarkerOnTile = (props: MarkerOnTileProps) => {
   const classes = useStyles();
   if (['black', 'white'].includes(props.color)) {
-    return <div className={classes.tile}><Piece color={ props.color}/></div>;
+    return <div className={classes.tile}><Marker color={props.color}/></div>;
   } else {
     return<></>
   }
 };
 
-export default PieceOnTile;
+export default MarkerOnTile;

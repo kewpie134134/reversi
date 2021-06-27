@@ -1,5 +1,6 @@
 import React from 'react';
 import Tile from '../Tile';
+import Image from 'next/image';
 import { shallow, ShallowWrapper } from 'enzyme';
 
 describe('Tile.tsx テスト', () => {
@@ -9,6 +10,6 @@ describe('Tile.tsx テスト', () => {
   });
 
   it('オセロタイルが表示される', () => {
-    expect(wrapper.find('img').props().src).toEqual('/assets/images/tile.svg');
+    expect(wrapper.find(Image).props().src).toEqual('/assets/images/tile.svg');
   });
 });

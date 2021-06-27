@@ -5,6 +5,6 @@ const title = {
   title: 'Footer',
 };
 
-export const Copyrights = () => <Footer />;
+export const Copyright = () => <Footer />;
 
 export default title;

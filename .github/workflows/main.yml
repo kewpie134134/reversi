@@ -73,6 +73,9 @@ jobs:
       - name: Run Jest
         run: yarn jest
 
+      - name: Run Jest Coverage
+        run: yarn test:coverage
+
       - name: Upload test coverage artifact
         uses: actions/upload-artifact@v2
         with:

@@ -41,6 +41,7 @@ jobs:
   eslint:
     name: eslint
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - uses: actions/checkout@v2
 
@@ -58,7 +59,7 @@ jobs:
   jest:
     name: jest
     runs-on: ubuntu-latest
-
+    needs: eslint
     steps:
       - uses: actions/checkout@v2
 

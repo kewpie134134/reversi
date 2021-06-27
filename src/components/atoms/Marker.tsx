@@ -12,7 +12,8 @@ const Marker = (props: MarkerProps) => {
       <Image
         src={`/assets/images/${color}Marker.svg`}
         width={20}
-        height={20}></Image>
+        height={20}
+        alt={`${color}Marker`}></Image>
     );
   } else {
     return <></>;

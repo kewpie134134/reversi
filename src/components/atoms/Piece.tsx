@@ -12,7 +12,8 @@ const Piece = (props: PieceProps) => {
       <Image
         src={`/assets/images/${color}Piece.svg`}
         width={80}
-        height={80}></Image>
+        height={80}
+        alt={`${color}Piece`}></Image>
     );
   } else {
     return <></>;

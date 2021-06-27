@@ -32,11 +32,6 @@ jobs:
           node-version: '14.17.x'
 
       # Runs a single command using the runners shell
-  
-  test:
-    name: test
-    runs-on: ubuntu-latest
-    steps:
       - name: Yarn install
         run: yarn install
       

@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the develop branch
   push:
-    branches: [master, develop, feature]
+    branches: [master, develop, feature/**]
   pull_request:
     branches: [develop]
 
@@ -35,11 +35,43 @@ jobs:
       - name: Yarn install
         run: yarn install
 
+      - name: build
+        run: yarn build
+
+  eslint:
+    name: eslint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.17.x'
+
+      - name: Yarn install
+        run: yarn install
+
       - name: Run Eslint
         run: yarn lint
 
-      - name: Run Jest
-        run: yarn jest
+  jest:
+    name: jest
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.17.x'
+
+      - name: Yarn install
+        run: yarn install
+
+      - name: Run Jest Coverage
+        run: yarn test:coverage
 
       - name: Upload test coverage artifact
         uses: actions/upload-artifact@v2

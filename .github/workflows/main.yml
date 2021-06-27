@@ -70,9 +70,6 @@ jobs:
       - name: Yarn install
         run: yarn install
 
-      - name: Run Jest
-        run: yarn jest
-
       - name: Run Jest Coverage
         run: yarn test:coverage
 

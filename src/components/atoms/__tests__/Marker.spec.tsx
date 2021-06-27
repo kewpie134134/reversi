@@ -20,6 +20,6 @@ describe('Marker.tsx テスト', () => {
 
   it('props.color が green のとき、img タグが表示されない', () => {
     const wrapper: ShallowWrapper = shallow(<Marker color={'green'} />);
-    expect(wrapper.find('img').exists()).toBeFalsy();
+    expect(wrapper.find(Image).exists()).toBeFalsy();
   });
 });

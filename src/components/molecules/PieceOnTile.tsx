@@ -17,14 +17,17 @@ const useStyles = makeStyles({
   },
 });
 
-const PieceOnTile = (props: PieceOnTileProps) => {
+const PieceOnTile = (props: PieceOnTileProps): JSX.Element => {
   const classes = useStyles();
-  const {color} = props
+  const { color } = props;
   if (['black', 'white'].includes(color)) {
-    return <div className={classes.tile}><Piece color={color}/></div>;
-  } else {
-    return<></>
+    return (
+      <div className={classes.tile}>
+        <Piece color={color} />
+      </div>
+    );
   }
+  return <></>;
 };
 
 export default PieceOnTile;

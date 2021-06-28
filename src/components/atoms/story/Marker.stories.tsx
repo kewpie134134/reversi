@@ -5,8 +5,8 @@ const title = {
   title: 'Marker',
 };
 
-export const WhiteMarker = () => <Marker color={'white'} />;
+export const WhiteMarker = (): JSX.Element => <Marker color="white" />;
 
-export const BlackMarker = () => <Marker color={'black'} />;
+export const BlackMarker = (): JSX.Element => <Marker color="black" />;
 
 export default title;

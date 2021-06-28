@@ -5,6 +5,6 @@ const title = {
   title: 'Tile',
 };
 
-export const aTile = () => <Tile />;
+export const aTile = (): JSX.Element => <Tile />;
 
 export default title;

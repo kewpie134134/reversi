@@ -5,8 +5,12 @@ const title = {
   title: 'MarkerOnTile',
 };
 
-export const WhiteMarkerOnTile = () => <MarkerOnTile color={'white'} />;
+export const WhiteMarkerOnTile = (): JSX.Element => (
+  <MarkerOnTile color="white" />
+);
 
-export const BlackMarkerOnTile = () => <MarkerOnTile color={'black'} />;
+export const BlackMarkerOnTile = (): JSX.Element => (
+  <MarkerOnTile color="black" />
+);
 
 export default title;

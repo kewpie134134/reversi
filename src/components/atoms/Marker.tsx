@@ -5,7 +5,7 @@ interface MarkerProps {
   color: string;
 }
 
-const Marker = (props: MarkerProps) => {
+const Marker = (props: MarkerProps): JSX.Element => {
   const { color } = props;
   if (['black', 'white'].includes(color)) {
     return (
@@ -13,10 +13,10 @@ const Marker = (props: MarkerProps) => {
         src={`/assets/images/${color}Marker.svg`}
         width={20}
         height={20}
-        alt={`${color}Marker`}></Image>
+        alt={`${color}Marker`}
+      />
     );
-  } else {
-    return <></>;
   }
+  return <></>;
 };
 export default Marker;

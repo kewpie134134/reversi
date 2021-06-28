@@ -1,15 +1,11 @@
 import React from 'react';
-import Tile from '../Tile';
 import Image from 'next/image';
-import { shallow, ShallowWrapper } from 'enzyme';
+import { shallow } from 'enzyme';
+import Tile from '../Tile';
 
 describe('Tile.tsx テスト', () => {
-  let wrapper: ShallowWrapper;
-  beforeEach(() => {
-    wrapper = shallow(<Tile />);
-  });
-
   it('オセロタイルが表示される', () => {
+    const wrapper = shallow(<Tile />);
     expect(wrapper.find(Image).props().src).toEqual('/assets/images/tile.svg');
   });
 });

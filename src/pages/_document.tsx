@@ -3,10 +3,10 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 
 export default class MyDocument extends Document {
-  render() {
+  render(): JSX.Element {
     return (
       <Html lang="ja">
-        <Head></Head>
+        <Head />
         <body>
           <Main />
           <NextScript />
@@ -47,6 +47,7 @@ MyDocument.getInitialProps = async (ctx) => {
 
   ctx.renderPage = () =>
     originalRenderPage({
+      /* eslint-disable react/jsx-props-no-spreading */
       enhanceApp: (App) => (props) => sheets.collect(<App {...props} />),
     });
 

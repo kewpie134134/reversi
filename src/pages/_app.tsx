@@ -3,7 +3,7 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
@@ -13,6 +13,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }, []);
 
   return (
+    /* eslint-disable react/jsx-props-no-spreading */
     <>
       <CssBaseline />
       <Component {...pageProps} />

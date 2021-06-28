@@ -1,10 +1,10 @@
 // Sample.tsx のテストコード
 import React from 'react';
+import { shallow } from 'enzyme';
 import Sample, { square } from '../Sample';
-import { shallow, ShallowWrapper } from 'enzyme';
 
 describe('Sample.tsx テスト', () => {
-  let sampleComponent: ShallowWrapper;
+  let sampleComponent = shallow(<Sample />);
   beforeEach(() => {
     sampleComponent = shallow(<Sample />);
   });

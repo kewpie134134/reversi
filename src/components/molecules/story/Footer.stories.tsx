@@ -5,6 +5,6 @@ const title = {
   title: 'Footer',
 };
 
-export const Copyright = () => <Footer />;
+export const Copyright = (): JSX.Element => <Footer />;
 
 export default title;

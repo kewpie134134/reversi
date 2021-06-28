@@ -5,21 +5,19 @@ interface ButtonProps {
   text: string;
 }
 
-export const square = (num: number) => {
-  return num * num;
-};
+export const square = (num: number): number => num * num;
 
-export const Button = ({ onClick, text }: ButtonProps) => (
-  <button onClick={onClick}>{text}</button>
+export const Button = ({ onClick, text }: ButtonProps): JSX.Element => (
+  <button type="button" onClick={onClick}>
+    {text}
+  </button>
 );
 
-const Sample = () => {
-  return (
-    <>
-      <div>Sample</div>
-      <p>{square(3)}</p>
-    </>
-  );
-};
+const Sample = (): JSX.Element => (
+  <>
+    <div>Sample</div>
+    <p>{square(3)}</p>
+  </>
+);
 
 export default Sample;

@@ -5,8 +5,12 @@ const title = {
   title: 'PieceOnTile',
 };
 
-export const WhitePieceOnTile = () => <PieceOnTile color={'white'} />;
+export const WhitePieceOnTile = (): JSX.Element => (
+  <PieceOnTile color="white" />
+);
 
-export const BlackPieceOnTile = () => <PieceOnTile color={'black'} />;
+export const BlackPieceOnTile = (): JSX.Element => (
+  <PieceOnTile color="black" />
+);
 
 export default title;

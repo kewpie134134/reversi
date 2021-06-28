@@ -5,6 +5,6 @@ const title = {
   title: 'Header',
 };
 
-export const AppBarHeader = () => <Header />;
+export const AppBarHeader = (): JSX.Element => <Header />;
 
 export default title;

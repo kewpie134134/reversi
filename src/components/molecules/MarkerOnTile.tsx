@@ -17,14 +17,17 @@ const useStyles = makeStyles({
   },
 });
 
-const MarkerOnTile = (props: MarkerOnTileProps) => {
+const MarkerOnTile = (props: MarkerOnTileProps): JSX.Element => {
   const classes = useStyles();
-  const {color} = props
+  const { color } = props;
   if (['black', 'white'].includes(color)) {
-    return <div className={classes.tile}><Marker color={color}/></div>;
-  } else {
-    return<></>
+    return (
+      <div className={classes.tile}>
+        <Marker color={color} />
+      </div>
+    );
   }
+  return <></>;
 };
 
 export default MarkerOnTile;

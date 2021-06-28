@@ -1,25 +1,25 @@
 import React from 'react';
-import Piece from '../Piece';
 import Image from 'next/image';
-import { shallow, ShallowWrapper } from 'enzyme';
+import { shallow } from 'enzyme';
+import Piece from '../Piece';
 
 describe('Piece.tsx テスト', () => {
   it('props.color が black のとき、黒石のイメージを表示する', () => {
-    const wrapper: ShallowWrapper = shallow(<Piece color={'black'} />);
+    const wrapper = shallow(<Piece color="black" />);
     expect(wrapper.find(Image).props().src).toEqual(
       '/assets/images/blackPiece.svg'
     );
   });
 
   it('props.color が white のとき、白石のイメージを表示する', () => {
-    const wrapper: ShallowWrapper = shallow(<Piece color={'white'} />);
+    const wrapper = shallow(<Piece color="white" />);
     expect(wrapper.find(Image).props().src).toEqual(
       '/assets/images/whitePiece.svg'
     );
   });
 
   it('props.color が white, black 以外のとき、img タグが表示されない', () => {
-    const wrapper: ShallowWrapper = shallow(<Piece color={'green'} />);
+    const wrapper = shallow(<Piece color="green" />);
     expect(wrapper.find(Image).exists()).toBeFalsy();
   });
 });

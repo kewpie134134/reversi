@@ -1,7 +1,7 @@
 import React from 'react';
-import Sample, { Button, square } from '../Sample';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import { withKnobs, text } from '@storybook/addon-knobs';
+import Sample, { Button, square } from '../Sample';
 
 const title = {
   title: 'Sample',
@@ -9,15 +9,15 @@ const title = {
   decorators: [withKnobs],
 };
 
-export const showButton = () => (
+export const showButton = (): JSX.Element => (
   <Button onClick={action('clicked')} text="Button" />
 );
 
-export const showSample = () => <Sample />;
+export const showSample = (): JSX.Element => <Sample />;
 
-export const showSquare = () => square(3);
+export const showSquare = (): number => square(3);
 
-export const primary = () => (
+export const primary = (): JSX.Element => (
   <Button text={text('text', 'button')} onClick={action('clicked')} />
 );
 

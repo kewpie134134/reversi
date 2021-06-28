@@ -5,8 +5,8 @@ const title = {
   title: 'Piece',
 };
 
-export const WhitePiece = () => <Piece color={'white'} />;
+export const WhitePiece = (): JSX.Element => <Piece color="white" />;
 
-export const BlackPiece = () => <Piece color={'black'} />;
+export const BlackPiece = (): JSX.Element => <Piece color="black" />;
 
 export default title;

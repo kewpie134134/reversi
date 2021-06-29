@@ -13,25 +13,25 @@
     "build:storybook": "build-storybook -o build/storybook"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.4",
-    "@material-ui/icons": "^4.11.2",
     "next": "11.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2",
-    "@storybook/addon-a11y": "^6.3.0",
-    "@storybook/addon-actions": "^6.3.0",
-    "@storybook/addon-docs": "^6.3.0",
+    "@storybook/addon-a11y": "^6.3.1",
+    "@storybook/addon-actions": "^6.3.1",
+    "@storybook/addon-docs": "^6.3.1",
     "@storybook/addon-knobs": "^6.3.0",
-    "@storybook/addon-links": "^6.3.0",
+    "@storybook/addon-links": "^6.3.1",
     "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/addon-storyshots": "^6.3.0",
-    "@storybook/addons": "^6.3.0",
-    "@storybook/react": "^6.3.0"
-  },
-  "devDependencies": {
+    "@storybook/addon-storyshots": "^6.3.1",
+    "@storybook/addons": "^6.3.1",
+    "@storybook/react": "^6.3.1",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.23",
     "@types/react": "17.0.11",

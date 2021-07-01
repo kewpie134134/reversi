@@ -22,6 +22,6 @@ describe('Sample.tsx テスト', () => {
   it('mock 処理お試し', () => {
     const myMock = jest.fn();
     myMock.mockReturnValueOnce(10);
-    expect(myMock()).toEqual(11);
+    expect(myMock()).toEqual(10);
   });
 });

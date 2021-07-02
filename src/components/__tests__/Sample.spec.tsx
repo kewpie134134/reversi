@@ -18,4 +18,10 @@ describe('Sample.tsx テスト', () => {
     const expected = 9;
     expect(result).toStrictEqual(expected);
   });
+
+  it('mock 処理お試し', () => {
+    const myMock = jest.fn();
+    myMock.mockReturnValueOnce(10);
+    expect(myMock()).toEqual(10);
+  });
 });

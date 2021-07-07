@@ -19,10 +19,21 @@ const ReversiBoard = (): JSX.Element => {
   // ゲームスタート時の状態に盤面を準備
   reversiBoard[3][3] = <PieceOnTile color="black" key={33} />;
   reversiBoard[3][4] = <PieceOnTile color="white" key={34} />;
-  reversiBoard[4][3] = <PieceOnTile color="black" key={43} />;
-  reversiBoard[4][4] = <PieceOnTile color="white" key={44} />;
+  reversiBoard[4][3] = <PieceOnTile color="white" key={43} />;
+  reversiBoard[4][4] = <PieceOnTile color="black" key={44} />;
 
-  return <>{reversiBoard}</>;
+  return (
+    <>
+      <div>{reversiBoard[0]}</div>
+      <div>{reversiBoard[1]}</div>
+      <div>{reversiBoard[2]}</div>
+      <div>{reversiBoard[3]}</div>
+      <div>{reversiBoard[4]}</div>
+      <div>{reversiBoard[5]}</div>
+      <div>{reversiBoard[6]}</div>
+      <div>{reversiBoard[7]}</div>
+    </>
+  );
 };
 
 export default ReversiBoard;

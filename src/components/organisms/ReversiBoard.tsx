@@ -5,6 +5,7 @@ import ItemOnTile from 'components/molecules/ItemOnTile';
 const useStyles = makeStyles({
   tile: {
     display: 'inline-flex',
+    border: 'solid 1px',
   },
 });
 
@@ -32,13 +33,11 @@ const ReversiBoard = (): JSX.Element => {
   reversiBoard[4][4] = <ItemOnTile itemName="blackPiece" key={44} />;
 
   return (
-    <>
+    <div className={classes.tile}>
       {reversiBoard.map((tiles, index) => (
-        <div className={classes.tile} key={index.toString()}>
-          {tiles}
-        </div>
+        <div key={index.toString()}>{tiles}</div>
       ))}
-    </>
+    </div>
   );
 };
 

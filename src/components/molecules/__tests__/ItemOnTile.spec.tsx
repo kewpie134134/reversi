@@ -28,4 +28,6 @@ describe('ItemOnTile.tsx テスト', () => {
     expect(wrapper.find('Piece').exists()).toBeFalsy();
     expect(wrapper.find('Marker').exists()).toBeFalsy();
   });
+
+  // TODO: ボタン属性になったため、テストを追加する
 });

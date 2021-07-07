@@ -21,25 +21,33 @@ const useStyles = makeStyles({
 
 const ItemOnTile = ({ itemName }: ItemOnTileProps): JSX.Element => {
   const classes = useStyles();
+  // タイルのクリックハンドラ
+  const clickHandler = () => {};
+
   if (itemName) {
     if (['blackPiece', 'whitePiece'].includes(itemName)) {
       return (
-        <div className={classes.tile}>
+        <button type="button" className={classes.tile} onClick={clickHandler}>
           <Piece name={itemName} />
-        </div>
+        </button>
       );
     }
     if (itemName && ['blackMarker', 'whiteMarker'].includes(itemName)) {
       return (
-        <div className={classes.tile}>
+        <button type="button" className={classes.tile} onClick={clickHandler}>
           <Marker name={itemName} />
-        </div>
+        </button>
       );
     }
   }
-  return <div className={classes.tile} />;
+  return (
+    <button type="button" className={classes.tile} onClick={clickHandler}>
+      {' '}
+    </button>
+  );
 };
 
+// props が渡されないかもしれないのでデフォルト値を設定する
 ItemOnTile.defaultProps = {
   itemName: '',
 };

@@ -1,7 +1,17 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core';
 import ItemOnTile from 'components/molecules/ItemOnTile';
 
+const useStyles = makeStyles({
+  tile: {
+    display: 'inline-flex',
+  },
+});
+
 const ReversiBoard = (): JSX.Element => {
+  // Material UI 設定
+  const classes = useStyles();
+
   // 盤面作成
   const reversiBoard: JSX.Element[][] = new Array<JSX.Element[]>(8);
   for (let x = 0; x < reversiBoard.length; x += 1) {
@@ -23,14 +33,14 @@ const ReversiBoard = (): JSX.Element => {
 
   return (
     <>
-      <div>{reversiBoard[0]}</div>
-      <div>{reversiBoard[1]}</div>
-      <div>{reversiBoard[2]}</div>
-      <div>{reversiBoard[3]}</div>
-      <div>{reversiBoard[4]}</div>
-      <div>{reversiBoard[5]}</div>
-      <div>{reversiBoard[6]}</div>
-      <div>{reversiBoard[7]}</div>
+      <div className={classes.tile}>{reversiBoard[0]}</div>
+      <div className={classes.tile}>{reversiBoard[1]}</div>
+      <div className={classes.tile}>{reversiBoard[2]}</div>
+      <div className={classes.tile}>{reversiBoard[3]}</div>
+      <div className={classes.tile}>{reversiBoard[4]}</div>
+      <div className={classes.tile}>{reversiBoard[5]}</div>
+      <div className={classes.tile}>{reversiBoard[6]}</div>
+      <div className={classes.tile}>{reversiBoard[7]}</div>
     </>
   );
 };

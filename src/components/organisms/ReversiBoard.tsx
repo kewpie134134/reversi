@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core';
 import ItemOnTile from 'components/molecules/ItemOnTile';
 
 const useStyles = makeStyles({
-  tile: {
+  tiles: {
     display: 'inline-flex',
     border: 'solid 1px',
   },
@@ -33,7 +33,7 @@ const ReversiBoard = (): JSX.Element => {
   reversiBoard[4][4] = <ItemOnTile itemName="blackPiece" key={44} />;
 
   return (
-    <div className={classes.tile}>
+    <div className={classes.tiles}>
       {reversiBoard.map((tiles, index) => (
         <div key={index.toString()}>{tiles}</div>
       ))}

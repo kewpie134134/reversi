@@ -10,7 +10,6 @@ const Home = (): JSX.Element => (
     <main className={styles.main}>
       <ReversiBoard />
     </main>
-
     <Footer />
   </>
 );

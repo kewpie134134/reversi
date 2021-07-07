@@ -32,13 +32,13 @@ const ReversiBoard = (): JSX.Element => {
   reversiBoard[4][4] = <ItemOnTile itemName="blackPiece" key={44} />;
 
   return (
-    <div>
+    <>
       {reversiBoard.map((tiles, index) => (
         <div className={classes.tile} key={index.toString()}>
           {tiles}
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

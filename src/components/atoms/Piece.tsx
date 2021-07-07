@@ -2,18 +2,17 @@ import React from 'react';
 import Image from 'next/image';
 
 interface PieceProps {
-  color: string;
+  name: string;
 }
 
-const Piece = (props: PieceProps): JSX.Element => {
-  const { color } = props;
-  if (['black', 'white'].includes(color)) {
+const Piece = ({ name }: PieceProps): JSX.Element => {
+  if (['blackPiece', 'whitePiece'].includes(name)) {
     return (
       <Image
-        src={`/assets/images/${color}Piece.svg`}
+        src={`/assets/images/${name}.svg`}
         width={80}
         height={80}
-        alt={`${color}Piece`}
+        alt={name}
       />
     );
   }

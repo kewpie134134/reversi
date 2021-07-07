@@ -1,6 +1,5 @@
 import React from 'react';
-import Tile from 'components/atoms/Tile';
-import PieceOnTile from 'components/molecules/PieceOnTile';
+import ItemOnTile from 'components/molecules/ItemOnTile';
 
 const ReversiBoard = (): JSX.Element => {
   // 盤面作成
@@ -12,15 +11,15 @@ const ReversiBoard = (): JSX.Element => {
   // 盤面初期化(key 値は x*10+y とする)
   for (let x = 0; x < reversiBoard.length; x += 1) {
     for (let y = 0; y < reversiBoard.length; y += 1) {
-      reversiBoard[x][y] = <Tile key={x * 10 + y} />;
+      reversiBoard[x][y] = <ItemOnTile key={x * 10 + y} />;
     }
   }
 
   // ゲームスタート時の状態に盤面を準備
-  reversiBoard[3][3] = <PieceOnTile color="black" key={33} />;
-  reversiBoard[3][4] = <PieceOnTile color="white" key={34} />;
-  reversiBoard[4][3] = <PieceOnTile color="white" key={43} />;
-  reversiBoard[4][4] = <PieceOnTile color="black" key={44} />;
+  reversiBoard[3][3] = <ItemOnTile itemName="blackPiece" key={33} />;
+  reversiBoard[3][4] = <ItemOnTile itemName="whitePiece" key={34} />;
+  reversiBoard[4][3] = <ItemOnTile itemName="whitePiece" key={43} />;
+  reversiBoard[4][4] = <ItemOnTile itemName="blackPiece" key={44} />;
 
   return (
     <>

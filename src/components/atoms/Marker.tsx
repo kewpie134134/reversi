@@ -2,18 +2,17 @@ import React from 'react';
 import Image from 'next/image';
 
 interface MarkerProps {
-  color: string;
+  name: string;
 }
 
-const Marker = (props: MarkerProps): JSX.Element => {
-  const { color } = props;
-  if (['black', 'white'].includes(color)) {
+const Marker = ({ name }: MarkerProps): JSX.Element => {
+  if (['blackMarker', 'whiteMarker'].includes(name)) {
     return (
       <Image
-        src={`/assets/images/${color}Marker.svg`}
+        src={`/assets/images/${name}.svg`}
         width={20}
         height={20}
-        alt={`${color}Marker`}
+        alt={name}
       />
     );
   }

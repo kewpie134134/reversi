@@ -15,6 +15,7 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     alignItems: 'center',
     background: '#69C491',
+    border: 'solid 1px',
   },
 });
 

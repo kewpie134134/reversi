@@ -7,8 +7,10 @@ import styles from '../styles/Home.module.css';
 const Home = (): JSX.Element => (
   <>
     <Header />
-    <main className={styles.main}>Reversi Game</main>
-    <ReversiBoard />
+    <main className={styles.main}>
+      <ReversiBoard />
+    </main>
+
     <Footer />
   </>
 );

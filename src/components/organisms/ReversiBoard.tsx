@@ -33,14 +33,11 @@ const ReversiBoard = (): JSX.Element => {
 
   return (
     <>
-      <div className={classes.tile}>{reversiBoard[0]}</div>
-      <div className={classes.tile}>{reversiBoard[1]}</div>
-      <div className={classes.tile}>{reversiBoard[2]}</div>
-      <div className={classes.tile}>{reversiBoard[3]}</div>
-      <div className={classes.tile}>{reversiBoard[4]}</div>
-      <div className={classes.tile}>{reversiBoard[5]}</div>
-      <div className={classes.tile}>{reversiBoard[6]}</div>
-      <div className={classes.tile}>{reversiBoard[7]}</div>
+      {reversiBoard.map((tiles, index) => (
+        <div className={classes.tile} key={index.toString()}>
+          {tiles}
+        </div>
+      ))}
     </>
   );
 };

@@ -15,9 +15,7 @@ const ReversiBoard = (): JSX.Element => {
   const classes = useStyles();
 
   // クリック時に実行されるイベント
-  const clickHandler = (): void => {
-    console.log('clicked');
-  };
+  const clickHandler = (): void => {};
 
   // 盤面処理用配列（ラベルを使用, 0: Tile, 1: blackPiece, -1: whitePiece）
   const reversiBoardLabels: number[][] = new Array<number[]>(8);

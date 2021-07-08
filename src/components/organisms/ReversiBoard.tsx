@@ -14,6 +14,11 @@ const ReversiBoard = (): JSX.Element => {
   // Material UI 設定
   const classes = useStyles();
 
+  // クリック時に実行されるイベント
+  const clickHandler = (): void => {
+    console.log('clicked');
+  };
+
   // 盤面処理用配列（ラベルを使用, 0: Tile, 1: blackPiece, -1: whitePiece）
   const reversiBoardLabels: number[][] = new Array<number[]>(8);
   // 盤面描画用配列
@@ -44,17 +49,27 @@ const ReversiBoard = (): JSX.Element => {
       switch (reversiBoardLabels[x][y]) {
         case 1: // 黒石の場合
           reversiBoardViews[x][y] = (
-            <ItemOnTile itemName="blackPiece" key={x * 10 + y} />
+            <ItemOnTile
+              itemName="blackPiece"
+              onClick={clickHandler}
+              key={x * 10 + y}
+            />
           );
           break;
         case -1: // 白石の場合
           reversiBoardViews[x][y] = (
-            <ItemOnTile itemName="whitePiece" key={x * 10 + y} />
+            <ItemOnTile
+              itemName="whitePiece"
+              onClick={clickHandler}
+              key={x * 10 + y}
+            />
           );
           break;
         case 0: // 石がない場合
         default:
-          reversiBoardViews[x][y] = <ItemOnTile key={x * 10 + y} />;
+          reversiBoardViews[x][y] = (
+            <ItemOnTile onClick={clickHandler} key={x * 10 + y} />
+          );
       }
     }
   }

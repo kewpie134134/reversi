@@ -5,7 +5,7 @@ import Marker from 'components/atoms/Marker';
 
 interface ItemOnTileProps {
   itemName?: string;
-  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick: () => void;
 }
 
 const useStyles = makeStyles({

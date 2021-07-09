@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import ItemOnTile from 'components/molecules/ItemOnTile';
+import { xBoardFromKeyNumber, yBoardFromKeyNumber } from 'utils/functions';
 
 const useStyles = makeStyles({
   tiles: {
@@ -13,14 +14,6 @@ const useStyles = makeStyles({
 const ReversiBoard = (): JSX.Element => {
   // Material UI 設定
   const classes = useStyles();
-
-  const xBoardFromKeyNumber = (keyNumber: number) =>
-    // 2桁の数字から 10 の位を取得する
-    Math.trunc(keyNumber / 10);
-
-  const yBoardFromKeyNumber = (keyNumber: number) =>
-    // 2桁の数字から 1 の位を取得する
-    keyNumber % 10;
 
   // クリック時に実行されるイベント
   const clickHandler = (keyNumber: number): void => {

@@ -15,7 +15,9 @@ const ReversiBoard = (): JSX.Element => {
   const classes = useStyles();
 
   // クリック時に実行されるイベント
-  const clickHandler = (): void => {};
+  const clickHandler = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    console.log(e.currentTarget);
+  };
 
   // 盤面処理用配列（ラベルを使用, 0: Tile, 1: blackPiece, -1: whitePiece）
   const reversiBoardLabels: number[][] = new Array<number[]>(8);
@@ -49,7 +51,9 @@ const ReversiBoard = (): JSX.Element => {
           reversiBoardViews[x][y] = (
             <ItemOnTile
               itemName="blackPiece"
-              onClick={clickHandler}
+              onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                clickHandler(e)
+              }
               key={x * 10 + y}
             />
           );
@@ -58,7 +62,9 @@ const ReversiBoard = (): JSX.Element => {
           reversiBoardViews[x][y] = (
             <ItemOnTile
               itemName="whitePiece"
-              onClick={clickHandler}
+              onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                clickHandler(e)
+              }
               key={x * 10 + y}
             />
           );
@@ -66,7 +72,12 @@ const ReversiBoard = (): JSX.Element => {
         case 0: // 石がない場合
         default:
           reversiBoardViews[x][y] = (
-            <ItemOnTile onClick={clickHandler} key={x * 10 + y} />
+            <ItemOnTile
+              onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                clickHandler(e)
+              }
+              key={x * 10 + y}
+            />
           );
       }
     }

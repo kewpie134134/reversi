@@ -14,9 +14,18 @@ const ReversiBoard = (): JSX.Element => {
   // Material UI 設定
   const classes = useStyles();
 
+  const xBoardFromKeyNumber = (keyNumber: number) =>
+    // 2桁の数字から 10 の位を取得する
+    Math.trunc(keyNumber / 10);
+
+  const yBoardFromKeyNumber = (keyNumber: number) =>
+    // 2桁の数字から 1 の位を取得する
+    keyNumber % 10;
+
   // クリック時に実行されるイベント
-  const clickHandler = (number: number): void => {
-    console.log(number);
+  const clickHandler = (keyNumber: number): void => {
+    console.log(xBoardFromKeyNumber(keyNumber));
+    console.log(yBoardFromKeyNumber(keyNumber));
   };
 
   // 盤面処理用配列（ラベルを使用, 0: Tile, 1: blackPiece, -1: whitePiece）

@@ -30,7 +30,7 @@ const ReversiBoard = (): JSX.Element => {
     reversiBoardViews[x] = new Array<JSX.Element>(8);
   }
 
-  // 盤面初期化(key 値は x*10+y とする)
+  // 盤面初期化
   for (let x = 0; x < reversiBoardLabels.length; x += 1) {
     for (let y = 0; y < reversiBoardLabels.length; y += 1) {
       reversiBoardLabels[x][y] = 0;
@@ -43,7 +43,7 @@ const ReversiBoard = (): JSX.Element => {
   reversiBoardLabels[4][3] = -1;
   reversiBoardLabels[4][4] = 1;
 
-  // 盤面をロジックに合わせて描画
+  // 盤面をロジックに合わせて描画(key 値は x*10+y とする)
   for (let x = 0; x < reversiBoardLabels.length; x += 1) {
     for (let y = 0; y < reversiBoardLabels.length; y += 1) {
       switch (reversiBoardLabels[x][y]) {

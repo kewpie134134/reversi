@@ -31,7 +31,7 @@ const ItemOnTile = ({ itemName, onClick }: ItemOnTileProps): JSX.Element => {
         </button>
       );
     }
-    if (itemName && ['blackMarker', 'whiteMarker'].includes(itemName)) {
+    if (['blackMarker', 'whiteMarker'].includes(itemName)) {
       return (
         <button type="button" className={classes.tile} onClick={onClick}>
           <Marker name={itemName} />

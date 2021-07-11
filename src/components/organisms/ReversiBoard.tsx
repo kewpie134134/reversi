@@ -28,7 +28,7 @@ const ReversiBoard = (): JSX.Element => {
   // 盤面描画用配列作成
   const reversiBoardViews: JSX.Element[][] = makeJsxElementAssocArray(8, 8);
 
-  // 配列の初期化 (関数化する)
+  // 配列の初期化
   for (let x = 0; x < reversiBoardLabels.length; x += 1) {
     for (let y = 0; y < reversiBoardLabels.length; y += 1) {
       reversiBoardLabels[x][y] = initReversiBoard(reversiBoardLabels)[x][y];

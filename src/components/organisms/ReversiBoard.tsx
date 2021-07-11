@@ -1,7 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import ItemOnTile from 'components/molecules/ItemOnTile';
-import { xBoardFromKeyNumber, yBoardFromKeyNumber } from 'utils/functions';
+import {
+  xBoardFromKeyNumber,
+  yBoardFromKeyNumber,
+  initReversiBoard,
+} from 'utils/functions';
 
 const useStyles = makeStyles({
   tiles: {
@@ -15,8 +19,7 @@ const ReversiBoard = (): JSX.Element => {
   // Material UI 設定
   const classes = useStyles();
 
-  // 指し手
-  // const [player, setPlayer] = useState<number>(0); // 0: 初期値, 1: 黒, -1: 白
+  // 指し手 0: 初期値, 1: 黒, -1: 白
   let player = 0; // 0: 初期値, 1: 黒, -1: 白
   // 盤面処理用配列（ラベルを使用, 0: Tile, 1: blackPiece, -1: whitePiece）
   const reversiBoardLabels: number[][] = new Array<number[]>(8);
@@ -29,18 +32,13 @@ const ReversiBoard = (): JSX.Element => {
     reversiBoardViews[x] = new Array<JSX.Element>(8);
   }
 
-  // 盤面初期化
+  // 配列の初期化
   for (let x = 0; x < reversiBoardLabels.length; x += 1) {
-    for (let y = 0; y < reversiBoardLabels[x].length; y += 1) {
-      reversiBoardLabels[x][y] = 0;
+    for (let y = 0; y < reversiBoardLabels.length; y += 1) {
+      reversiBoardLabels[x][y] = initReversiBoard(reversiBoardLabels)[x][y];
     }
   }
 
-  // ゲームスタート時の状態に盤面を準備(0: tile, 1: blackPiece, -1: whitePiece)
-  reversiBoardLabels[3][3] = 1;
-  reversiBoardLabels[3][4] = -1;
-  reversiBoardLabels[4][3] = -1;
-  reversiBoardLabels[4][4] = 1;
   // プレイヤーを黒の番にする
   player = 1;
 

@@ -2,6 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import ItemOnTile from 'components/molecules/ItemOnTile';
 import {
+  makeNumberAssocArray,
+  makeJsxElementAssocArray,
   xBoardFromKeyNumber,
   yBoardFromKeyNumber,
   initReversiBoard,
@@ -21,18 +23,12 @@ const ReversiBoard = (): JSX.Element => {
 
   // 指し手 0: 初期値, 1: 黒, -1: 白
   let player = 0; // 0: 初期値, 1: 黒, -1: 白
-  // 盤面処理用配列（ラベルを使用, 0: Tile, 1: blackPiece, -1: whitePiece）
-  const reversiBoardLabels: number[][] = new Array<number[]>(8);
-  // 盤面描画用配列
-  const reversiBoardViews: JSX.Element[][] = new Array<JSX.Element[]>(8);
+  // 盤面処理用配列作成（ラベルを使用, 0: Tile, 1: blackPiece, -1: whitePiece）
+  const reversiBoardLabels: number[][] = makeNumberAssocArray(8, 8);
+  // 盤面描画用配列作成
+  const reversiBoardViews: JSX.Element[][] = makeJsxElementAssocArray(8, 8);
 
-  // 配列作成
-  for (let x = 0; x < reversiBoardLabels.length; x += 1) {
-    reversiBoardLabels[x] = new Array<number>(8);
-    reversiBoardViews[x] = new Array<JSX.Element>(8);
-  }
-
-  // 配列の初期化
+  // 配列の初期化 (関数化する)
   for (let x = 0; x < reversiBoardLabels.length; x += 1) {
     for (let y = 0; y < reversiBoardLabels.length; y += 1) {
       reversiBoardLabels[x][y] = initReversiBoard(reversiBoardLabels)[x][y];
@@ -42,6 +38,7 @@ const ReversiBoard = (): JSX.Element => {
   // プレイヤーを黒の番にする
   player = 1;
 
+  /* ---------------------------------------------------------------------- */
   /**
    * 指定された方向にひっくり返す石があるか確認する
    * @param xBoard 選択された x 座標
@@ -57,10 +54,7 @@ const ReversiBoard = (): JSX.Element => {
     yDirection: number
   ): number => {
     // 現在の盤面をバックアップするための配列を用意
-    const reversiBoardLabelsBackup: number[][] = new Array<number[]>(8);
-    for (let x = 0; x < reversiBoardLabelsBackup.length; x += 1) {
-      reversiBoardLabelsBackup[x] = new Array<number>(8);
-    }
+    const reversiBoardLabelsBackup: number[][] = makeNumberAssocArray(8, 8);
 
     // 盤面情報をバックアップ
     for (let x = 0; x < reversiBoardLabelsBackup.length; x += 1) {
@@ -120,6 +114,8 @@ const ReversiBoard = (): JSX.Element => {
     // 最後に裏返しを行った数を返す
     return isReversedOpponentPiece;
   };
+
+  /* ---------------------------------------------------------------------- */
 
   /**
    * 各方向にの石をひっくり返すことができるか確認する

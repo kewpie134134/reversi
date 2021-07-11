@@ -1,4 +1,38 @@
 /**
+ * 数値型の連想配列を作成する
+ * @param xLength x 方向に作成する長さ
+ * @param yLength y 方向に作成する長さ
+ * @returns 指定されたサイズの数値型連想配列
+ */
+export const makeNumberAssocArray = (
+  xLength: number,
+  yLength: number
+): number[][] => {
+  const associativeArray: number[][] = new Array<number[]>(xLength);
+  for (let x = 0; x < associativeArray.length; x += 1) {
+    associativeArray[x] = new Array<number>(yLength);
+  }
+  return associativeArray;
+};
+
+/**
+ * JSX.Element 型の連想配列を作成する
+ * @param xLength x 方向に作成する長さ
+ * @param yLength y 方向に作成する長さ
+ * @returns 指定されたサイズの JSX.Element 型連想配列
+ */
+export const makeJsxElementAssocArray = (
+  xLength: number,
+  yLength: number
+): JSX.Element[][] => {
+  const associativeArray: JSX.Element[][] = new Array<JSX.Element[]>(xLength);
+  for (let x = 0; x < associativeArray.length; x += 1) {
+    associativeArray[x] = new Array<JSX.Element>(yLength);
+  }
+  return associativeArray;
+};
+
+/**
  * 2桁の数字から 10 の位 (x 座標) を返す
  * @param keyNumber key 値（座標値から計算されたもの -> x*10 + y）
  * @returns key 値から計算された x 座標

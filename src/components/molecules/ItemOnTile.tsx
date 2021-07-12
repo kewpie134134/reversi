@@ -22,22 +22,19 @@ const useStyles = makeStyles({
 
 const ItemOnTile = ({ itemName, onClick }: ItemOnTileProps): JSX.Element => {
   const classes = useStyles();
-
-  if (itemName) {
-    if (['blackPiece', 'whitePiece'].includes(itemName)) {
-      return (
-        <button type="button" className={classes.tile} onClick={onClick}>
-          <Piece name={itemName} />
-        </button>
-      );
-    }
-    if (itemName && ['blackMarker', 'whiteMarker'].includes(itemName)) {
-      return (
-        <button type="button" className={classes.tile} onClick={onClick}>
-          <Marker name={itemName} />
-        </button>
-      );
-    }
+  if (itemName && ['blackPiece', 'whitePiece'].includes(itemName)) {
+    return (
+      <button type="button" className={classes.tile} onClick={onClick}>
+        <Piece name={itemName} />
+      </button>
+    );
+  }
+  if (itemName && ['blackMarker', 'whiteMarker'].includes(itemName)) {
+    return (
+      <button type="button" className={classes.tile} onClick={onClick}>
+        <Marker name={itemName} />
+      </button>
+    );
   }
   return (
     <button type="button" className={classes.tile} onClick={onClick}>

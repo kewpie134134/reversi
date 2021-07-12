@@ -32,25 +32,12 @@ const ReversiBoard = (): JSX.Element => {
   // 盤面描画用配列作成
   const reversiBoardViews: JSX.Element[][] = makeJsxElementAssocArray(8, 8);
 
-  // 配列作成
+  // 配列の初期化
   for (let x = 0; x < reversiBoardLabels.length; x += 1) {
     for (let y = 0; y < reversiBoardLabels.length; y += 1) {
       reversiBoardLabels[x][y] = initReversiBoard(reversiBoardLabels)[x][y];
     }
   }
-
-  // 盤面初期化
-  for (let x = 0; x < reversiBoardLabels.length; x += 1) {
-    for (let y = 0; y < reversiBoardLabels.length; y += 1) {
-      reversiBoardLabels[x][y] = 0;
-    }
-  }
-
-  // ゲームスタート時の状態に盤面を準備(0: tile, 1: blackPiece, -1: whitePiece)
-  reversiBoardLabels[3][3] = 1;
-  reversiBoardLabels[3][4] = -1;
-  reversiBoardLabels[4][3] = -1;
-  reversiBoardLabels[4][4] = 1;
 
   // 盤面をロジックに合わせて描画(key 値は x*10+y とする)
   for (let x = 0; x < reversiBoardLabels.length; x += 1) {

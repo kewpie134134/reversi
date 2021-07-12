@@ -1,7 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import ItemOnTile from 'components/molecules/ItemOnTile';
-import { xBoardFromKeyNumber, yBoardFromKeyNumber } from 'utils/functions';
+import {
+  makeNumberAssocArray,
+  makeJsxElementAssocArray,
+  xBoardFromKeyNumber,
+  yBoardFromKeyNumber,
+  initReversiBoard,
+} from 'utils/functions';
 
 const useStyles = makeStyles({
   tiles: {
@@ -21,15 +27,16 @@ const ReversiBoard = (): JSX.Element => {
     console.log(yBoardFromKeyNumber(keyNumber));
   };
 
-  // 盤面処理用配列（ラベルを使用, 0: Tile, 1: blackPiece, -1: whitePiece）
-  const reversiBoardLabels: number[][] = new Array<number[]>(8);
-  // 盤面描画用配列
-  const reversiBoardViews: JSX.Element[][] = new Array<JSX.Element[]>(8);
+  // 盤面処理用配列作成（ラベルを使用, 0: Tile, 1: blackPiece, -1: whitePiece）
+  const reversiBoardLabels: number[][] = makeNumberAssocArray(8, 8);
+  // 盤面描画用配列作成
+  const reversiBoardViews: JSX.Element[][] = makeJsxElementAssocArray(8, 8);
 
   // 配列作成
   for (let x = 0; x < reversiBoardLabels.length; x += 1) {
-    reversiBoardLabels[x] = new Array<number>(8);
-    reversiBoardViews[x] = new Array<JSX.Element>(8);
+    for (let y = 0; y < reversiBoardLabels.length; y += 1) {
+      reversiBoardLabels[x][y] = initReversiBoard(reversiBoardLabels)[x][y];
+    }
   }
 
   // 盤面初期化

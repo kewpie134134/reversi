@@ -5,6 +5,7 @@ import Marker from 'components/atoms/Marker';
 
 interface ItemOnTileProps {
   itemName?: string;
+  onClick: () => void;
 }
 
 const useStyles = makeStyles({
@@ -19,27 +20,30 @@ const useStyles = makeStyles({
   },
 });
 
-const ItemOnTile = ({ itemName }: ItemOnTileProps): JSX.Element => {
+const ItemOnTile = ({ itemName, onClick }: ItemOnTileProps): JSX.Element => {
   const classes = useStyles();
-  if (itemName) {
-    if (['blackPiece', 'whitePiece'].includes(itemName)) {
-      return (
-        <div className={classes.tile}>
-          <Piece name={itemName} />
-        </div>
-      );
-    }
-    if (itemName && ['blackMarker', 'whiteMarker'].includes(itemName)) {
-      return (
-        <div className={classes.tile}>
-          <Marker name={itemName} />
-        </div>
-      );
-    }
+  if (itemName && ['blackPiece', 'whitePiece'].includes(itemName)) {
+    return (
+      <button type="button" className={classes.tile} onClick={onClick}>
+        <Piece name={itemName} />
+      </button>
+    );
   }
-  return <div className={classes.tile} />;
+  if (itemName && ['blackMarker', 'whiteMarker'].includes(itemName)) {
+    return (
+      <button type="button" className={classes.tile} onClick={onClick}>
+        <Marker name={itemName} />
+      </button>
+    );
+  }
+  return (
+    <button type="button" className={classes.tile} onClick={onClick}>
+      {' '}
+    </button>
+  );
 };
 
+// props が渡されないかもしれないのでデフォルト値を設定する
 ItemOnTile.defaultProps = {
   itemName: '',
 };

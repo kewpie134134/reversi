@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14.17.x'
+          node-version: '18.14.x'
 
       - name: Yarn install
         run: yarn install
@@ -45,7 +45,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14.17.x'
+          node-version: '18.14.x'
       - name: Yarn install
         run: yarn install
 
@@ -62,7 +62,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14.17.x'
+          node-version: '18.14.x'
 
       - name: Yarn install
         run: yarn install
@@ -86,7 +86,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14.17.x'
+          node-version: '18.14.x'
 
       - name: Yarn install
         run: yarn install

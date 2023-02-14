@@ -6,18 +6,10 @@ module.exports = {
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
   snapshotSerializers: ['enzyme-to-json/serializer'],
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.(ts|tsx)$': ['ts-jest', {tsconfig: '<rootDir>/src/test/tsconfig.jest.json'}],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   // https://github.com/zeit/next.js/issues/8663#issue-490553899
-  globals: {
-    // we must specify a custom tsconfig for tests because we need the typescript transform
-    // to transform jsx into js rather than leaving it jsx such as the next build requires. you
-    // can see this setting in tsconfig.jest.json -> "jsx": "react"
-    'ts-jest': {
-      tsconfig: '<rootDir>/src/test/tsconfig.jest.json',
-    },
-  },
   moduleDirectories: ['node_modules', 'src'],
   moduleNameMapper: {
     '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
